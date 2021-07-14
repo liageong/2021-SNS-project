@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1 class="hi" style="text-align:center;">독서 초보가 추천하는 책</h1>
+  <hr style="border-style: dotted; color: darkgrey;" >
+  
+  <div style="text-align:center;">
+  
+     <li>&#128213; 방법: 밀리의 서재 </li> 
+     <li>&#128215; 언제? 자기 전이나 이동 시간</li>
+     <li>&#128216; 좋아하는 분야? 경영 경제&에세이</li>
+  
+  </div>
+
+  <table style="margin-left: auto; margin-right: auto;">
+    <tr id=up> <!--사진-->
+        <td><img src="{% static 'images/바이러스.JPG' %}" width=300 height=400></td>
+        <td><img src="{% static 'images/네이버.jpeg' %}" width=300 height=400></td>
+    </tr>
+    <tr style="text-align:center;"> <!--글-->
+        <td>개인적으로 좋아하는 작가님</td>
+        <td>핀테크에 대해 알 수 있는 책</td>
+    </tr>
+    <tr id=down> <!--사진-->
+        <td><img src="{% static 'images/집 청소.png' %}" width=300 height=400></td>
+        <td><img src="{% static 'images/배민다움.jpg' %}" width=300 height=400></td>
+    </tr>
+    <tr style="text-align:center;"> <!--글-->
+        <td>죽음의 흔적에 대한 적나라한 묘사가 <br> 독자로 하여금 많은 생각을 하게 하는 책</td>
+        <td>성공한 사람의 생각을 알 수 있는 책</td>
+    </tr>
+  </table>
+  {% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+	<form action="{%url 'main:cupdate' comment.id%}" method="POST">
+		{%csrf_token%}
+		<p><textarea name="content" id="" placeholder="댓글내용입력">{{comment.content}}</textarea></p>
+		<input type="submit" value="확인">
+	</form>
+</div>
+
+{% endblock %}

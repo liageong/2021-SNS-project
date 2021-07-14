@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <h1 class="hi" style="text-align:center;">만두는 누구인가?</h1>
+  <hr style="border-style: dotted; color: darkgrey;" >
+  
+  <div style="text-align:center;">
+  
+     <li>&#128054; 2018년 7월 2일생 </li> 
+     <li>&#128054; 포메라니안</li>
+     <li>&#128054; 왕자</li>
+  
+  </div>
+
+  <table style="margin-left: auto; margin-right: auto;">
+    <tr> <!--사진-->
+        <td><img src="{% static 'images/식탐.jpg' %}" width=300 height=300></td>
+        <td><img src="{% static 'images/통통.jpg' %}" width=300 height=300></td>
+        <td><img src="{% static 'images/산책.jpg' %}" width=300 height=300></td>
+    </tr>
+    <tr style="text-align:center;"> <!--글-->
+        <td>식탐이 많아요</td>
+        <td>조금 통통해요</td>
+        <td>산책을 좋아해요</td>
+    </tr>
+    <tr> <!--사진-->
+        <td><img src="{% static 'images/고양이.jpg' %}" width=300 height=300></td>
+        <td><img src="{% static 'images/다리.jpg' %}" width=300 height=300></td>
+        <td><img src="{% static 'images/모자.jpg' %}" width=300 height=300></td>
+    </tr>
+    <tr style="text-align:center;"> <!--글-->
+        <td>고양이를 좋아해요</td>
+        <td>다리가 짧아요</td>
+        <td>모자 쓰는 것을 싫어해요</td>
+    </tr>
+  </table>
+  {% endblock %}
+
+

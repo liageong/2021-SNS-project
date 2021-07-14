@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAE GYEONG</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/JJG.css' %}">
+    
+    <style media="screen">
+        div{width: 100vw; height:100vh;}
+        *{font-family: 'Jua', sans-serif;}
+        nav{
+            height: 34px;
+        }
+       
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">JAE-GYEONG</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout </a></li>
+                <li><a class="dropdown-item" href="{% url 'users:mypage' request.user.id %}">Mypage</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Signup</a></li>
+                {% endif %}
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+            </ul>
+            <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+    <section>
+        <div id="window1">
+            <div id ="intro">
+                <h1>WHO IS JAE-GYEONG?</h1>
+                <h3>궁금하면 내려보세요!</h3>
+            </div>
+        </div>
+
+        <div id="window2">
+            <img src="{% static 'images/computer.png' %}">
+            <div id="myself">
+                <h1>개발자가 되고 싶어요!</h1>
+                <h2>저는 원래 법조인을 꿈꿨지만 이제는 개발자라는 꿈을 꾸고 있습니다. </h2>
+            </div>
+        </div>
+
+        <div id="window3">
+            <h1>&#128584;MY KEYWORD &#128584; </h1>
+
+            <div class="container">
+                <div class="keyword">
+                    <img class="keyword_img" src="{% static 'images/밀리의서재.png' %}" alt="밀리의 서재 사진">
+                    <p class="keyword_text"><a href="{% url 'main:second' %}">책</a> 읽는 걸 좋아해요. 특히 밀리의 서재로! </p>
+                </div>
+                <div class="keyword">
+                    <img class="keyword_img" src="{% static 'images/mandu.jpg.png' %}" alt="만두 사진">
+                    <p class="keyword_text">3살 포메, <a href="{% url 'main:first' %}">만두</a>의 누나. 인스타 아이디도 mandu_sister ! </p>
+                </div>
+                <div class="keyword">
+                    <img class="keyword_img" src="{% static 'images/서점.png' %}"alt="서점 사진">
+                    <p class="keyword_text">서점 투어가 취미이자 나만의 힐링 방법</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="window4">
+            <h1>&#128218; 재경 사전 &#128218;</h1>
+            <div class="tmicontainer">
+                <div class="tmilist">
+                    <p id="tmi1">생일은?</p>
+                    <p id="tmi2">가족은?</p>
+                    <p id="tmi3">고향은?</p>
+                </div>
+                <div class="tmilist">
+                    <p id="tmi4">민초 좋아해?</p>
+                    <p id="tmi5">좋아하는 색은?</p>
+                    <p id="tmi6">무서워하는 것은?</p>
+                </div>
+                <div class="tmilist">
+                    <p id="tmi7">좋아하는 햄버거는?</p>
+                    <p id="tmi8">커피 마셔?</p>
+                    <p id="tmi9">MBTI?</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="window5">
+            <h1>&#129392;나의 넷플릭스 취향이 궁금하다면?&#129392;</h1>
+            <div class="imglist">
+                <a href="https://www.youtube.com/watch?v=IWpBGln6bNk" style="height: 376px;">
+                    <img src="{% static 'images/넷플.png' %}" alt="리틀포레스트 예고편">
+                </a>
+                <a href="https://www.youtube.com/watch?v=JVq7VpOh49I" style="height: 376px;">
+                    <img src="{% static 'images/넷플.png' %}" alt="엘리트들 소개영상">
+                </a>
+                <a href="https://www.youtube.com/watch?v=krNbUA7
+                YWhg&list=PLDs8E0XdJ8TcFFBhjgSB82sV_Nvge0U6x&index=2" style="height: 376px;">
+                    <img src="{% static 'images/넷플.png' %}" alt="터널 정주행 영상">
+                </a>
+                <a href="https://www.youtube.com/watch?v=HhgcXuN0MlU" style="height: 376px;">
+                    <img src="{% static 'images/넷플.png' %}" alt="스위트홈 소개 영상">
+                </a>
+            </div>
+
+        </div>
+
+        <div> 
+            <h2 style="margin-top: 200px; text-align: center; font-size: 64px;"><a href="{% url 'main:new' %}">방명록 쓰기</a></h2>
+            <h1 style="margin-top: 100px; text-align: center; font-size: 70px;">방명록</h1>
+            {% if user.is_authenticated %}
+            <div id="hello">
+                {% for blog in blogs %}
+	            <div style="height: fit-content; text-align: center;" >
+		            <h3 style="font-size: 35px;">{{blog.title}}</h3>
+                    {% if blog.writer %}
+                    {% if 'user' in blog.writer.username %}
+                    <h3>작성자 : <a href="{% url 'users:mypage' blog.writer.id %}">{{ blog.writer.last_name }} {{ blog.writer.first_name }}</a></h3>
+                    {% else %}
+                    <h3>작성자 :<a href="{% url 'users:mypage' blog.writer.id %}"> {{ blog.writer }}</a></h3>
+                    {% endif %}
+                    {% else %}
+                    <h3>작성자 : 알 수 없음</h3>
+                    {% endif %}<br>
+		            {{blog.summary}}
+                    <a href="{% url 'main:detail' blog.id %}">...자세히</a>
+		            <br>
+	            </div>
+	            {%endfor%}
+            </div>
+            {% else %}
+            <h3>로그인 후 이용 가능</h3>
+            <a href="{% url 'account_login' %}" class="btn btn-warning">로그인</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-warning">회원가입</a>
+            {% endif %}
+        </div>
+        
+    </section>
+ 
+</body>
+</html>
